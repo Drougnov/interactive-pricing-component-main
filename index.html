@@ -7,5 +7,37 @@
   <title>Interactive pricing component | Frontend Mentor</title>
 </head>
 <body>
+  <header>
+    <h1>Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required.</p>
+  </header>
+  <main>
+    <form action="#">
+      <span><span>100K</span> Pageviews</span>
+      <input type="range" min="1" max="5" step="1" aria-label="Select the number of pageviews for your plan">
+      <span>$<span>16.00</span> /month</span>
+      <div class="toggle-container">
+        <span>Monthly Billing</span>
+        <label class="switch">
+          <input type="checkbox" aria-label="toggle billing duration">
+          <span class="slider round"></span>
+        </label>
+        <span>Yearly Billing <span><span>-25%</span><span>25% discount</span></span></span>
+      </div>
+      <hr>
+      <div>
+        <ul>
+          <li><img src="./images/icon-check.svg" alt="">Unlimited websites</li>
+          <li><img src="./images/icon-check.svg" alt="">100% data ownership</li>
+          <li><img src="./images/icon-check.svg" alt="">Email reports</li>
+        </ul>
+        <button type="submit">Start my trial</button>
+      </div>
+    </form>
+  </main>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
+    Coded by <a href="https://rockybarua.netlify.app/">Rocky Barua</a>.
+  </footer>
 </body>
 </html>
