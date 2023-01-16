@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   <title>Interactive pricing component | Frontend Mentor</title>
 </head>
 <body>
   <header>
     <h1>Simple, traffic-based pricing</h1>
-    <p>Sign-up for our 30-day trial. No credit card required.</p>
+    <p>Sign-up for our 30-day trial.<br> No credit card required.</p>
   </header>
   <main>
     <form action="#">
-      <span><span>100K</span> Pageviews</span>
+      <span class="page-views"><span>100K</span> Pageviews</span>
+      <br>
       <input type="range" min="1" max="5" step="1" aria-label="Select the number of pageviews for your plan">
+      <br>
       <span>$<span>16.00</span> /month</span>
       <div class="toggle-container">
         <span>Monthly Billing</span>
@@ -27,11 +30,11 @@
       <hr>
       <div>
         <ul>
-          <li><img src="./images/icon-check.svg" alt="">Unlimited websites</li>
-          <li><img src="./images/icon-check.svg" alt="">100% data ownership</li>
-          <li><img src="./images/icon-check.svg" alt="">Email reports</li>
+          <li><img src="./images/icon-check.svg" alt=""><span>Unlimited websites</span></li>
+          <li><img src="./images/icon-check.svg" alt=""><span>100% data ownership</span></li>
+          <li><img src="./images/icon-check.svg" alt=""><span>100% data ownership</span></li>
         </ul>
-        <button type="submit">Start my trial</button>
+        <button type="submit" aria-label="Start my trial">Start my trial</button>
       </div>
     </form>
   </main>
