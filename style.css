@@ -7,10 +7,11 @@
 :root{
     --full-slider-bar: hsl(174, 77%, 80%);
     --slider-bg: hsl(174, 86%, 45%);
+    --slider-hover-bg: hsl(176, 65%, 40%);
     --discount-bg: hsl(14, 92%, 95%);
     --discount-text: hsl(15, 100%, 70%);
     --cta-text: hsl(226, 100%, 87%);
-    --pricing-component-bg: hsl (0, 0%, 100%);
+    --pricing-component-bg: hsl(0, 0%, 100%);
     --main-bg: hsl(230, 100%, 99%);
     --empty-slide-bar: hsl(224, 65%, 95%);
     --toggle-bar: hsl(223, 50%, 87%);
@@ -42,7 +43,7 @@ header h1{
     margin-bottom: .5rem;
 }
 main{
-    background: white;
+    background: var(--pricing-component-bg);
     padding: 1.5rem;
     margin: 1.5rem;
 }
@@ -51,32 +52,46 @@ main form .page-views{
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-form input[type="range"]{
+input[type='range'] {
     width: 100%;
-    -webkit-appearance: none;
-    outline: none;
+	-webkit-appearance: none;
+    margin: 2rem 0;
 }
-input[type=range]::-webkit-slider-runnable-track{
+input[type='range']:focus {
+	outline: none;
+}
+input[type='range'] {
     width: 100%;
     height: .5rem;
-    cursor: pointer;
-    background: var(--full-slider-bar);
+    background: linear-gradient(
+        to right,
+        var(--full-slider-bar) 0%,
+        var(--full-slider-bar) 50%,
+        var(--empty-slide-bar) 50%,
+        var(--empty-slide-bar) 100%
+        );
     border-radius: .5rem;
     -webkit-border-radius: .5rem;
     -moz-border-radius: .5rem;
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
-input[type=range]::-webkit-slider-thumb{
+input[type='range']::-webkit-slider-thumb {
     width: 2.25rem;
     height: 2.25rem;
-    border-radius: 50%;
     background: url('./images/icon-slider.svg') no-repeat center, var(--slider-bg);
+    border-radius: 50%;
+    box-shadow: 0 .5rem 1rem .5rem hsla(174, 77%, 80%);
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -1rem;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    -moz-appearance: none;
+    appearance: none;
+}
+input[type='range']::-webkit-slider-thumb:active,
+input[type='range']::-webkit-slider-thumb:hover {
+    background-color: var(--slider-hover-bg);
 }
