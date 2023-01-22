@@ -14,25 +14,27 @@
   </header>
   <main>
     <form action="#">
-      <span class="page-views"><span>100K</span> Pageviews</span>
-      <br>
-      <input type="range" min="0" max="100" step="1" aria-label="Select the number of pageviews for your plan">
-      <br>
-      <div class="price-container"><span id="price">$16.00</span><span>/ month</span></div>
+      <div class="range-container">
+        <span class="page-views"><span>100K</span> Pageviews</span>
+        <br>
+        <input type="range" min="0" max="100" step="1" aria-label="Select the number of pageviews for your plan">
+        <br>
+        <div class="price-container"><span id="price">$16.00</span><span>/ month</span></div>
+      </div>
       <div class="switch-container">
-        <span class="monthly">Monthly Billing</span>
+        <span>Monthly Billing</span>
         <label class="switch">
           <input type="checkbox" aria-label="toggle billing duration">
           <span class="slider"></span>
         </label>
-        <span class="yearly">Yearly Billing <span><span>-25%</span><span>25% discount</span></span></span>
+        <span>Yearly Billing <span class="yearly"><span class="yearly-mobile">-25%</span><span class="yearly-desktop">25% discount</span></span></span>
       </div>
       <hr>
-      <div>
+      <div class="features">
         <ul>
           <li><img src="./images/icon-check.svg" alt=""><span>Unlimited websites</span></li>
           <li><img src="./images/icon-check.svg" alt=""><span>100% data ownership</span></li>
-          <li><img src="./images/icon-check.svg" alt=""><span>100% data ownership</span></li>
+          <li><img src="./images/icon-check.svg" alt=""><span>Email reports</span></li>
         </ul>
         <button type="submit" aria-label="Start my trial">Start my trial</button>
       </div>
