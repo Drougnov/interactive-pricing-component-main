@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <title>Interactive pricing component | Frontend Mentor</title>
 </head>
 <body>
@@ -15,16 +16,16 @@
   <main>
     <form action="#">
       <div class="range-container">
-        <span class="page-views"><span>100K</span> Pageviews</span>
+        <span class="page-views"><span id="page-views">100K</span> Pageviews</span>
         <br>
-        <input type="range" min="0" max="100" step="1" aria-label="Select the number of pageviews for your plan">
+        <input id="range-input" type="range" min="0" max="80" step="1" aria-label="Select the number of pageviews for your plan">
         <br>
-        <div class="price-container"><span id="price">$16.00</span><span>/ month</span></div>
+        <div class="price-container"><span id="price">$16.00</span><span id="toggle-text">/ month</span></div>
       </div>
       <div class="switch-container">
         <span>Monthly Billing</span>
         <label class="switch">
-          <input type="checkbox" aria-label="toggle billing duration">
+          <input type="checkbox" aria-label="toggle billing duration" id="toggle-yearly">
           <span class="slider"></span>
         </label>
         <span>Yearly Billing <span class="yearly"><span class="yearly-mobile">-25%</span><span class="yearly-desktop">25% discount</span></span></span>
