@@ -1,29 +1,56 @@
 const pageViews = document.getElementById('page-views');
 const rangeInput = document.getElementById('range-input');
-let price = document.getElementById('price');
+const price = document.getElementById('price');
 const toggleYearly = document.getElementById('toggle-yearly');
-let toggleText = document.getElementById('toggle-text')
+const toggleText = document.getElementById('toggle-text')
 
-let yearly = toggleYearly.checked;
-yearly ? toggleText.innerHTML = "/ year" : toggleText.innerHTML = "/ month";
-
-rangeInput.addEventListener('input', ()=>{
-    let plan = rangeInput.value;
-
-    if(plan <= 0){
-        pageViews.innerHTML = '10K';
-        yearly ? price.innerHTML = "$6.00": price.innerHTML = '$8.00';
-    }else if(plan <= 20){
-        pageViews.innerHTML = '50K';
-        yearly ? price.innerHTML = "$9.00": price.innerHTML = '$12.00';
-    }else if(plan <= 40){
-        pageViews.innerHTML = '100K';
-        yearly ? price.innerHTML = "$12.00": price.innerHTML = '$16.00';
-    }else if(plan <= 60){
-        pageViews.innerHTML = '500K';
-        yearly ? price.innerHTML = "$18.00": price.innerHTML = '$24.00';
-    }else if(plan >= 80){
-        pageViews.innerHTML = '1M';
-        yearly ? price.innerHTML = "$27.00": price.innerHTML = '$36.00';
+toggleYearly.addEventListener('change', (e)=>{
+    if(e.target.checked){
+        toggleText.innerText = "/ year";
+        plans(true);
+    }else{
+        toggleText.innerText = "/ month";
+        plans(false)
     }
 })
+
+function plans(yearly){
+    rangeInput.addEventListener('input', (e)=>{
+        let cost = e.target.value;
+        if(yearly){
+            if(cost <= 0){
+                pageViews.innerText = "10K";
+                price.innerText = "$06.00";
+            }else if(cost <= 20){
+                pageViews.innerText = "50K";
+                price.innerText = "$09.00";
+            }else if(cost <= 40){
+                pageViews.innerText = "100K";
+                price.innerText = "$12.00";
+            }else if(cost <= 60){
+                pageViews.innerText = "500K";
+                price.innerText = "$18.00";
+            }else if(cost = 80){
+                pageViews.innerText = "1M";
+                price.innerText = "$24.00";
+            }
+        }else{
+            if(cost <= 0){
+                pageViews.innerText = "10K";
+                price.innerText = "$08.00";
+            }else if(cost <= 20){
+                pageViews.innerText = "50K";
+                price.innerText = "$12.00";
+            }else if(cost <= 40){
+                pageViews.innerText = "100K";
+                price.innerText = "$16.00";
+            }else if(cost <= 60){
+                pageViews.innerText = "500K";
+                price.innerText = "$24.00";
+            }else if(cost = 80){
+                pageViews.innerText = "1M";
+                price.innerText = "$32.00";
+            }
+        }
+    })
+}
