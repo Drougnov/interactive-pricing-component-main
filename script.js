@@ -2,55 +2,41 @@ const pageViews = document.getElementById('page-views');
 const rangeInput = document.getElementById('range-input');
 const price = document.getElementById('price');
 const toggleYearly = document.getElementById('toggle-yearly');
-const toggleText = document.getElementById('toggle-text')
+const toggleText = document.getElementById('toggle-text');
+
+const value = [0, 20, 40, 60, 80];
+const cost = [08, 12, 16, 24, 32]
+const views = ['10K', '50K', '100K', '500K', '1M'];
 
 toggleYearly.addEventListener('change', (e)=>{
-    if(e.target.checked){
-        toggleText.innerText = "/ year";
-        plans(true);
-    }else{
-        toggleText.innerText = "/ month";
-        plans(false)
+    for(let i=0; i< value.length; i++){
+        if(rangeInput.value >= value[i]){
+            pageViews.innerText = views[i];
+            if(toggleYearly.checked){
+                price.innerText = `$${cost[i] * .75}.00`;
+                toggleText.innerText = "/ year";
+            }else{
+                price.innerText = `$${cost[i]}.00`;
+                toggleText.innerText = "/ month";
+            }
+        }
     }
 })
 
-function plans(yearly){
-    rangeInput.addEventListener('input', (e)=>{
-        let cost = e.target.value;
-        if(yearly){
-            if(cost <= 0){
-                pageViews.innerText = "10K";
-                price.innerText = "$06.00";
-            }else if(cost <= 20){
-                pageViews.innerText = "50K";
-                price.innerText = "$09.00";
-            }else if(cost <= 40){
-                pageViews.innerText = "100K";
-                price.innerText = "$12.00";
-            }else if(cost <= 60){
-                pageViews.innerText = "500K";
-                price.innerText = "$18.00";
-            }else if(cost = 80){
-                pageViews.innerText = "1M";
-                price.innerText = "$24.00";
-            }
-        }else{
-            if(cost <= 0){
-                pageViews.innerText = "10K";
-                price.innerText = "$08.00";
-            }else if(cost <= 20){
-                pageViews.innerText = "50K";
-                price.innerText = "$12.00";
-            }else if(cost <= 40){
-                pageViews.innerText = "100K";
-                price.innerText = "$16.00";
-            }else if(cost <= 60){
-                pageViews.innerText = "500K";
-                price.innerText = "$24.00";
-            }else if(cost = 80){
-                pageViews.innerText = "1M";
-                price.innerText = "$32.00";
+rangeInput.addEventListener('input', (e)=>{
+    let inputValue = e.target.value;
+    plan(inputValue)
+})
+
+function plan(inputValue){
+    for(let i=0; i< value.length; i++){
+        if(inputValue >= value[i]){
+            pageViews.innerText = views[i];
+            if(toggleYearly.checked){
+                price.innerText = `$${cost[i] * .75}.00`;
+            }else{
+                price.innerText = `$${cost[i]}.00`;
             }
         }
-    })
+    }
 }
