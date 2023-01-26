@@ -268,8 +268,8 @@ footer a:hover{
         margin-top: 1rem;
     }
     form hr{
-        width: calc(100% + 6rem);
-        margin-left: -3rem;
+        width: calc(100% + 3rem);
+        margin-left: -1.5rem;
     }
 }
 @media(min-width: 750px){
@@ -327,6 +327,10 @@ footer a:hover{
     .yearly--desktop{
         font-size: 12px;
         display: inline;
+    }
+    form hr{
+        width: calc(100% + 6rem);
+        margin-left: -3rem;
     }
     form .features{
         flex-direction: row;
