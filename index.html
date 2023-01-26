@@ -15,35 +15,55 @@
   </header>
   <main>
     <form action="#">
-      <div class="range-container">
-        <span class="page-views"><span id="page-views">100K</span> Pageviews</span>
-        <br>
-        <input id="range-input" type="range" min="0" max="80" step="1" aria-label="Select the number of pageviews for your plan">
-        <br>
-        <div class="price-container"><span id="price">$16.00</span><span id="toggle-text">/ month</span></div>
-      </div>
-      <div class="switch-container">
-        <span>Monthly Billing</span>
-        <label class="switch">
-          <input type="checkbox" aria-label="toggle billing duration" id="toggle-yearly">
-          <span class="slider"></span>
-        </label>
-        <span>Yearly Billing <span class="yearly"><span class="yearly-mobile">-25%</span><span class="yearly-desktop">25% discount</span></span></span>
-      </div>
-      <hr>
-      <div class="features">
-        <ul>
-          <li><img src="./images/icon-check.svg" alt=""><span>Unlimited websites</span></li>
-          <li><img src="./images/icon-check.svg" alt=""><span>100% data ownership</span></li>
-          <li><img src="./images/icon-check.svg" alt=""><span>Email reports</span></li>
-        </ul>
-        <button type="submit" aria-label="Start my trial">Start my trial</button>
-      </div>
+        <div class="range-container">
+            <span class="view-container">
+              <span id="views">100K</span> Pageviews
+            </span>
+            <br>
+            <input type="range"
+                    min="0"
+                    max="80"
+                    step="1"
+                    aria-label="Select the number of pageviews for your plan"
+                    id="range-input">
+            <br>
+            <div class="price-container">
+              <span id="price">$16.00</span>
+              <span id="duration">/ month</span>
+            </div>
+        </div>
+
+        <div class="switch-container">
+            <span>Monthly Billing</span>
+            <label class="switch">
+              <input type="checkbox"
+                      aria-label="toggle billing duration"
+                      id="switch-input">
+              <span class="slider"></span>
+            </label>
+            <span>Yearly Billing 
+              <span class="yearly">
+                <span class="yearly--mobile">-25%</span>
+                <span class="yearly--desktop">25% discount</span>
+              </span>
+            </span>
+        </div>
+
+        <hr>
+
+        <div class="features">
+          <ul>
+            <li><img src="./images/icon-check.svg" alt=""><span>Unlimited websites</span></li>
+            <li><img src="./images/icon-check.svg" alt=""><span>100% data ownership</span></li>
+            <li><img src="./images/icon-check.svg" alt=""><span>Email reports</span></li>
+          </ul>
+          <button type="submit" aria-label="Start my trial">Start my trial</button>
+        </div>
     </form>
   </main>
   <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
-    Coded by <a href="https://rockybarua.netlify.app/">Rocky Barua</a>.
+    Coded by <a href="https://rockybarua.netlify.app/" target="_blank" rel="noopener">Rocky Barua</a>.
   </footer>
 </body>
 </html>

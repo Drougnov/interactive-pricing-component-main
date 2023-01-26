@@ -1,17 +1,17 @@
-const pageViews = document.getElementById('page-views');
+const pageViews = document.getElementById('views');
 const rangeInput = document.getElementById('range-input');
 const price = document.getElementById('price');
-const toggleYearly = document.getElementById('toggle-yearly');
-const toggleText = document.getElementById('toggle-text');
+const switchInput = document.getElementById('switch-input');
+const duration = document.getElementById('duration');
 
 const value = [0, 20, 40, 60, 80];
 const cost = [08, 12, 16, 24, 32]
 const views = ['10K', '50K', '100K', '500K', '1M'];
 
-toggleYearly.addEventListener('change', handleToggleYearly);
+switchInput.addEventListener('change', handleSwitchInput);
 rangeInput.addEventListener('input', handleRangeInput);
 
-function handleToggleYearly(e) {
+function handleSwitchInput() {
     plan(rangeInput.value);
 }
 
@@ -30,8 +30,8 @@ function plan(inputValue) {
     for(let i = 0; i < value.length; i++) {
         if (inputValue >= value[i]) {
             pageViews.innerText = views[i];
-            price.innerText = `$${(toggleYearly.checked ? cost[i] * .75 : cost[i]).toFixed(2)}`;
-            toggleText.innerText = toggleYearly.checked ? '/ year' : '/ month';
+            price.innerText = `$${(switchInput.checked ? cost[i] * .75 : cost[i]).toFixed(2)}`;
+            duration.innerText = switchInput.checked ? '/ year' : '/ month';
         }
     }
 }
