@@ -43,8 +43,8 @@ If the visitor switches the toggle to yearly billing, a 25% discount should be a
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/interactive-pricing-component-LZbB9Un5H0]https://www.frontendmentor.io/solutions/interactive-pricing-component-LZbB9Un5H0)
+- Live Site URL: [https://drougnov.github.io/interactive-pricing-component-main/](https://drougnov.github.io/interactive-pricing-component-main/)
 
 ## My process
 
